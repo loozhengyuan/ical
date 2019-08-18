@@ -82,7 +82,8 @@ func (e *Event) isReady() bool {
 	return true
 }
 
-func (e *Event) generateEventProp() string {
+// GenerateEventProp method creates .ics contents
+func (e *Event) GenerateEventProp() string {
 	// Validate first
 	status := e.isReady()
 	if !status {

@@ -41,7 +41,8 @@ func (c *Calendar) isReady() bool {
 	return true
 }
 
-func (c *Calendar) generateCalendarProp() string {
+// GenerateCalendarProp method creates .ics contents
+func (c *Calendar) GenerateCalendarProp() string {
 	// Validate first
 	status := c.isReady()
 	if !status {
@@ -60,7 +61,7 @@ func (c *Calendar) generateCalendarProp() string {
 
 	// Loop EVENT if exits
 	for _, event := range c.EVENT {
-		str.WriteString(event.generateEventProp())
+		str.WriteString(event.GenerateEventProp())
 	}
 
 	// Write footers
